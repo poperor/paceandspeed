@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         <h1>Speed converter for runners</h1>
 
         <p>Convert freely between kilometers per hour (kph), miles per hour (mph), minutes per 
-          kilometer or minutes per miles, or minutes per any given distance.</p>
+          kilometer or miles or minutes per any given distance.</p>
       </main>
 
       <footer className={styles.footer}>
