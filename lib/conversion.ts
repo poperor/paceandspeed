@@ -1,3 +1,12 @@
+import { Dispatch, SetStateAction } from "react"
+
+export interface SourceProps {
+    setCannonicalKph: Dispatch<SetStateAction<number>>
+}
+
+export interface ResultProps {
+    cannonicalKph: number
+}
 
 export interface MinutesPerKm {
     min: number
@@ -23,6 +32,8 @@ export interface MinutesPerDistanceInYards {
 
 const KphMphRatio = 1.60934
 const YardsPerMile = 1760
+
+export const fromKph = (kph: number) => kph 
 
 export const fromMinutesPerKm = (minPerKm: MinutesPerKm): number => {
     const sec = minPerKm.min * 60 + minPerKm.sec
@@ -64,7 +75,10 @@ export const fromMinutesPerDistanceInYards = (minutesPerYards: MinutesPerDistanc
 
 export const toKph = (cannonicalKph: number): number => +cannonicalKph.toFixed(1)
 
-export const toMinutesPerKm = (kph: number): MinutesPerKm => {
+export const toMinutesPerKm = (kph: number): MinutesPerKm | undefined => {
+    if (!kph) {
+        return undefined
+    }
     const secPerKm = 3600 / kph
     return {
         min: Math.floor(secPerKm / 60),

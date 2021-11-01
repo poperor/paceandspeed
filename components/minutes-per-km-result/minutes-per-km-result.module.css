@@ -1,0 +1,13 @@
+section.box {
+  border: 2px groove threedface;
+  padding: 1em;
+}
+
+section h2.legend {
+  float: left;
+  margin: -1.7em 0 0;
+  padding: 0 0.5em;
+  background: #fff;
+  font-size: 1em;
+  font-weight: normal;
+}
