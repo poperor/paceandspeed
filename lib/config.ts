@@ -27,7 +27,7 @@ export const speedTypes: SpeedType[] = [
   },
   {
     id: "minutes-per-km",
-    name: "minute per kilometer",
+    name: "minutes per kilometer",
     sourceComponent: MinutesPerKmSource,
     resultComponent: MinutesPerKmResult,
   },

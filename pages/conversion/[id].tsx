@@ -7,8 +7,8 @@ interface Props {
 }
 
 const Conversion: NextPage<Props> = ({ id }) => {
-  const [cannonicalKph, setCannonicalKph] = useState(0)
-  
+  const [cannonicalKph, setCannonicalKph] = useState(0);
+
   const [sourceTypeId, resultTypeId] = id.split("-to-");
   const sourceType = speedTypes.find(
     (speedType) => speedType.id === sourceTypeId
@@ -21,8 +21,17 @@ const Conversion: NextPage<Props> = ({ id }) => {
   }
   return (
     <div>
-      {sourceType.sourceComponent({ setCannonicalKph })}
-      {resultType.resultComponent({ cannonicalKph })}
+      <h1>
+        Convert {sourceType.name} to {resultType.name}
+      </h1>
+      <fieldset>
+        <legend>{sourceType.name}</legend>
+        {sourceType.sourceComponent({ setCannonicalKph })}
+      </fieldset>
+      <fieldset>
+        <legend>{resultType.name}</legend>
+        {resultType.resultComponent({ cannonicalKph })}
+      </fieldset>
     </div>
   );
 };

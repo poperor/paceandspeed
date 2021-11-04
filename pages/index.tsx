@@ -24,7 +24,7 @@ const Home: NextPage = () => {
           (mph), minutes per kilometer or miles or minutes per any given
           distance.
         </p>
-        {hrefs.map(href => <div key={href}><Link href={href}>{href}</Link></div>)}
+        {hrefs.map(href => <div key={href}><Link href={href}><a>{href}</a></Link></div>)}
         
       </main>
 

@@ -2,9 +2,9 @@ import { useState } from "react";
 import {
   fromMinutesPerKm,
   MinutesPerKm,
-  SourceProps,
-  toMinutesPerKm,
+  SourceProps
 } from "../../lib/conversion";
+import styles from './minutes-per-km-source.module.css'
 
 export const MinutesPerKmSource = ({ setCannonicalKph }: SourceProps) => {
   const [mintuesPerKm, setMinutesPerKm] = useState<MinutesPerKm>({
@@ -27,12 +27,11 @@ export const MinutesPerKmSource = ({ setCannonicalKph }: SourceProps) => {
   };
 
   return (
-    <fieldset>
-      <legend>Minutes per kilometer</legend>
-      <div>
-        min <input type="number" onChange={onMinChange} />
-        sec <input type="number" onChange={onSecChange} />
-      </div>
-    </fieldset>
+    <div>
+      <input className={styles.timeinput} type="number" onChange={onMinChange} placeholder="minutes" />{" "}
+      minutes{" "}
+      <input className={styles.timeinput} type="number" onChange={onSecChange} placeholder="seconds" />{" "}
+      seconds
+    </div>
   );
 };

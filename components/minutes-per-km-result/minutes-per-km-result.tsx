@@ -6,12 +6,11 @@ export const MinutesPerKmResult = ({ cannonicalKph }: ResultProps) => {
   return (
     <div>
       {minutesPerKm && (
-        <section className={styles.box}>
-          <h2 className={styles.legend}>Minutes per kilometer</h2>
+        <div>
           {minutesPerKm.min > 0 && <span>{minutesPerKm.min} minutes </span>}
           {minutesPerKm.sec > 0 && <span>{minutesPerKm.sec} seconds</span>}{" "}
           <span>per kilometer </span>
-        </section>
+        </div>
       )}
     </div>
   );
