@@ -1,7 +1,6 @@
 # Pace and Speed
 
-Convert freely between pace per kilometer or mile and speed in kilometers per hour or miles per hour. You
-can also find pace and speed for the time used on any given distance or lap. 
+Convert freely between pace and speed. You can also find pace and speed for the time used on any given distance or lap.
 
 ## Getting Started
 
