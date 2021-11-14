@@ -1,6 +1,9 @@
 import { NextPage } from "next";
+import Head from "next/head";
 import { useState } from "react";
-import { getAllPaths, Params, SpeedType, speedTypes } from "../../lib/config";
+import { getAllPaths, Params, SpeedType, speedTypes } from "../lib/config";
+import styles from "./[id].module.css"
+import {upperCaseFirst} from "upper-case-first"
 
 interface Props {
   id: string;
@@ -19,20 +22,27 @@ const Conversion: NextPage<Props> = ({ id }) => {
   if (!sourceType || !resultType) {
     return <p>Error</p>;
   }
+  const title = upperCaseFirst(`${sourceType.name} to ${resultType.name}`)
   return (
+    <>
+    <Head>
+        <title>{title}</title>
+        <meta name="og:title" content={title} />
+      </Head>
     <div>
       <h1>
-        Convert {sourceType.name} to {resultType.name}
+        {title}
       </h1>
-      <fieldset>
-        <legend>{sourceType.name}</legend>
+      <fieldset className={styles.sourceContainer}>
+        <legend>{upperCaseFirst(sourceType.name)}</legend>
         {sourceType.sourceComponent({ setCannonicalKph })}
       </fieldset>
-      <fieldset>
-        <legend>{resultType.name}</legend>
+      <fieldset className={styles.resultContainer}>
+        <legend>{upperCaseFirst(resultType.name)}</legend>
         {resultType.resultComponent({ cannonicalKph })}
       </fieldset>
     </div>
+    </>
   );
 };
 

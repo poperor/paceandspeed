@@ -26,8 +26,8 @@ export const speedTypes: SpeedType[] = [
     resultComponent: KphResult,
   },
   {
-    id: "minutes-per-km",
-    name: "minutes per kilometer",
+    id: "pace-per-km",
+    name: "pace per kilometer",
     sourceComponent: MinutesPerKmSource,
     resultComponent: MinutesPerKmResult,
   },
