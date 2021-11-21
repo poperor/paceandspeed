@@ -1,5 +1,5 @@
 {
-  "name": "speed-converter",
+  "name": "paceandspeed",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "clsx": "^1.1.1",
     "next": "^12.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",

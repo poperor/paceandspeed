@@ -34,7 +34,7 @@ const Conversion: NextPage<Props> = ({ id }) => {
         {title}
       </h1>
       <fieldset className={styles.sourceContainer}>
-        <legend>{upperCaseFirst(sourceType.name)}</legend>
+        <legend className={styles.boxLegend}>{upperCaseFirst(sourceType.name)}</legend>
         {sourceType.sourceComponent({ setCannonicalKph })}
       </fieldset>
       <fieldset className={styles.resultContainer}>

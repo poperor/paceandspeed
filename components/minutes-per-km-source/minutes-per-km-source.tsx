@@ -5,6 +5,7 @@ import {
   SourceProps
 } from "../../lib/conversion";
 import styles from './minutes-per-km-source.module.css'
+import utilityStyles from '../../styles/utility.module.css'
 
 export const MinutesPerKmSource = ({ setCannonicalKph }: SourceProps) => {
   const [mintuesPerKm, setMinutesPerKm] = useState<MinutesPerKm>({
@@ -27,7 +28,7 @@ export const MinutesPerKmSource = ({ setCannonicalKph }: SourceProps) => {
   };
 
   return (
-    <div>
+    <div className={utilityStyles.verticalAlign}> 
       <input className={styles.timeinput} type="number" onChange={onMinChange} placeholder="minutes" />{" "}
       minutes{" "}
       <input className={styles.timeinput} type="number" onChange={onSecChange} placeholder="seconds" />{" "}
