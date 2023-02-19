@@ -8,21 +8,21 @@ import styles from './minutes-per-km-source.module.css'
 import utilityStyles from '../../styles/utility.module.css'
 
 export const MinutesPerKmSource = ({ setCannonicalKph }: SourceProps) => {
-  const [mintuesPerKm, setMinutesPerKm] = useState<MinutesPerKm>({
+  const [minutesPerKm, setMinutesPerKm] = useState<MinutesPerKm>({
     min: 0,
     sec: 0,
   });
 
   const onMinChange = (event: React.FormEvent<HTMLInputElement>): void => {
     const min = event.currentTarget.valueAsNumber;
-    const newMinPerKm = { ...mintuesPerKm, min };
+    const newMinPerKm = { ...minutesPerKm, min };
     setMinutesPerKm(newMinPerKm);
     setCannonicalKph(fromMinutesPerKm(newMinPerKm));
   };
 
   const onSecChange = (event: React.FormEvent<HTMLInputElement>): void => {
     const sec = event.currentTarget.valueAsNumber;
-    const newMinPerKm = { ...mintuesPerKm, sec };
+    const newMinPerKm = { ...minutesPerKm, sec };
     setMinutesPerKm(newMinPerKm);
     setCannonicalKph(fromMinutesPerKm(newMinPerKm));
   };

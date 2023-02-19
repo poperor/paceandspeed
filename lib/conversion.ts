@@ -33,7 +33,7 @@ export interface MinutesPerDistanceInYards {
 const KphMphRatio = 1.60934
 const YardsPerMile = 1760
 
-export const fromKph = (kph: number) => kph 
+export const fromKph = (kph: number): number => kph 
 
 export const fromMinutesPerKm = (minPerKm: MinutesPerKm): number => {
     const sec = minPerKm.min * 60 + minPerKm.sec
