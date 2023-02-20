@@ -1,7 +1,7 @@
-import { KphResult } from "../components/kph-result/kph-result";
-import { KphSource } from "../components/kph-source/kph-source";
-import { MinutesPerKmResult } from "../components/minutes-per-km-result/minutes-per-km-result";
-import { MinutesPerKmSource } from "../components/minutes-per-km-source/minutes-per-km-source";
+import { KphResult } from "../components/results/kph-result";
+import { KphSource } from "../components/sources/kph-source";
+import { MinutesPerKmResult } from "../components/results/minutes-per-km-result";
+import { MinutesPerKmSource } from "../components/sources/minutes-per-km-source";
 import {
   fromKph,
   fromMinutesPerKm,

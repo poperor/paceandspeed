@@ -49,8 +49,8 @@ export const fromMinutesPerDistanceInMeters = (minutesPerMeters: MinutesPerDista
     if (!minutesPerMeters.distance || !sec) {
         return 0;
     }
-    const distancePerKm = minutesPerMeters.distance / 1000
-    return (3600 / sec) * distancePerKm
+    const distanceInKm = minutesPerMeters.distance / 1000
+    return (3600 / sec) * distanceInKm
 }
 
 export const fromMph = (mph: number): number => mph * KphMphRatio
@@ -69,8 +69,8 @@ export const fromMinutesPerDistanceInYards = (minutesPerYards: MinutesPerDistanc
     if (!minutesPerYards.distance || !sec) {
         return 0;
     }
-    const distancePerMile = minutesPerYards.distance / YardsPerMile
-    return (3600 / sec) * distancePerMile * KphMphRatio
+    const distanceInMiles = minutesPerYards.distance / YardsPerMile
+    return (3600 / sec) * distanceInMiles * KphMphRatio
 }
 
 export const toKph = (cannonicalKph: number): number => +cannonicalKph.toFixed(1)
