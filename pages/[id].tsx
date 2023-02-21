@@ -12,17 +12,17 @@ interface Props {
 const Conversion: NextPage<Props> = ({ id }) => {
   const [cannonicalKph, setCannonicalKph] = useState(0);
 
-  const [sourceTypeId, resultTypeId] = id.split("-to-");
-  const sourceType = speedTypes.find(
-    (speedType) => speedType.id === sourceTypeId
+  const [inputTypeId, resultTypeId] = id.split("-to-");
+  const inputType = speedTypes.find(
+    (speedType) => speedType.id === inputTypeId
   );
   const resultType = speedTypes.find(
     (speedType) => speedType.id === resultTypeId
   );
-  if (!sourceType || !resultType) {
+  if (!inputType || !resultType) {
     return <p>Error</p>;
   }
-  const title = upperCaseFirst(`${sourceType.name} to ${resultType.name}`)
+  const title = upperCaseFirst(`${inputType.name} to ${resultType.name}`)
   return (
     <>
     <Head>
@@ -33,9 +33,9 @@ const Conversion: NextPage<Props> = ({ id }) => {
       <h1>
         {title}
       </h1>
-      <fieldset className={styles.sourceContainer}>
-        <legend className={styles.boxLegend}>{upperCaseFirst(sourceType.name)}</legend>
-        {sourceType.sourceComponent({ setCannonicalKph })}
+      <fieldset className={styles.inputContainer}>
+        <legend className={styles.boxLegend}>{upperCaseFirst(inputType.name)}</legend>
+        {inputType.inputComponent({ setCannonicalKph })}
       </fieldset>
       <fieldset className={styles.resultContainer}>
         <legend>{upperCaseFirst(resultType.name)}</legend>

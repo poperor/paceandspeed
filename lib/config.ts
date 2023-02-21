@@ -1,20 +1,16 @@
 import { KphResult } from "../components/results/kph-result";
-import { KphSource } from "../components/sources/kph-source";
+import { KphInput } from "../components/inputs/kph-input";
 import { MinutesPerKmResult } from "../components/results/minutes-per-km-result";
-import { MinutesPerKmSource } from "../components/sources/minutes-per-km-source";
+import { MinutesPerKmInput } from "../components/inputs/minutes-per-km-input";
 import {
-  fromKph,
-  fromMinutesPerKm,
   ResultProps,
-  SourceProps,
-  toKph,
-  toMinutesPerKm,
+  InputProps,
 } from "./conversion";
 
 export interface SpeedType {
   id: string;
   name: string;
-  sourceComponent: ({ setCannonicalKph }: SourceProps) => JSX.Element;
+  inputComponent: ({ setCannonicalKph }: InputProps) => JSX.Element;
   resultComponent: ({ cannonicalKph }: ResultProps) => JSX.Element;
 }
 
@@ -22,13 +18,13 @@ export const speedTypes: SpeedType[] = [
   {
     id: "kph",
     name: "kilometers per hour",
-    sourceComponent: KphSource,
+    inputComponent: KphInput,
     resultComponent: KphResult,
   },
   {
-    id: "pace-per-km",
-    name: "pace per kilometer",
-    sourceComponent: MinutesPerKmSource,
+    id: "minutes-per-km",
+    name: "minutes per kilometer",
+    inputComponent: MinutesPerKmInput,
     resultComponent: MinutesPerKmResult,
   },
 ];
@@ -40,11 +36,11 @@ export interface Params {
 }
 
 export const getAllPaths = (): Array<Params> => {
-  const paths = speedTypes.flatMap((sourceSpeedType) =>
+  const paths = speedTypes.flatMap((inputSpeedType) =>
     speedTypes
-      .filter((resultSpeedType) => sourceSpeedType.id !== resultSpeedType.id)
+      .filter((resultSpeedType) => inputSpeedType.id !== resultSpeedType.id)
       .map(
-        (resultSpeedType) => sourceSpeedType.id + "-to-" + resultSpeedType.id
+        (resultSpeedType) => inputSpeedType.id + "-to-" + resultSpeedType.id
       )
   );
   const params = paths.map((path) => ({

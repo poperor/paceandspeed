@@ -2,12 +2,12 @@ import { useState } from "react";
 import {
   fromMinutesPerKm,
   MinutesPerKm,
-  SourceProps
+  InputProps
 } from "../../lib/conversion";
-import styles from './minutes-per-km-source.module.css'
+import styles from './minutes-per-km-input.module.css'
 import utilityStyles from '../../styles/utility.module.css'
 
-export const MinutesPerKmSource = ({ setCannonicalKph }: SourceProps) => {
+export const MinutesPerKmInput = ({ setCannonicalKph }: InputProps) => {
   const [minutesPerKm, setMinutesPerKm] = useState<MinutesPerKm>({
     min: 0,
     sec: 0,

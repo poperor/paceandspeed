@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { SourceProps } from "../../lib/conversion";
-import styles from "./kph-source.module.css";
+import { InputProps } from "../../lib/conversion";
+import styles from "./kph-input.module.css";
 import utilityStyles from '../../styles/utility.module.css'
 
-export const KphSource = ({ setCannonicalKph }: SourceProps) => {
+export const KphInput = ({ setCannonicalKph }: InputProps) => {
   const [kph, setKph] = useState(0);
 
   const onChange = (event: React.FormEvent<HTMLInputElement>): void => {

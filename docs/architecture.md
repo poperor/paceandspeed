@@ -1,3 +1,3 @@
 ## State
 
-Each page as generated from [id].tsx keeps cannonicalKph in state using the useState hook. Every speed source is immediately converted to cannonicalKph which is then again used by speed result for calculating the result. And then again every source component keeps like e.g. ~/components/minutes-per-km-source/minutes-per-km-source.tsx keeps the speed or pace it is representing in its own state with help of the useState hook.
+Each page as generated from [id].tsx keeps cannonicalKph in state using the useState hook. Every speed input is immediately converted to cannonicalKph which is then again used by speed result for calculating the result. And then again every input component keeps like e.g. ~/components/minutes-per-km-input/minutes-per-km-input.tsx keeps the speed or pace it is representing in its own state with help of the useState hook.
