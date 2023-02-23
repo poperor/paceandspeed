@@ -1,11 +1,22 @@
-.resultContainer, .inputContainer {
-    height: 5em;
-    margin-bottom: 5rem;
-    position:relative;
+.resultContainer,
+.inputContainer {
+  height: 5em;
+  margin-top: 3rem;
+  position: relative;
 }
 
 legend.boxLegend {
-    background-color: gray;
-    color: white;
+  /* background-color: gray; */
+  color: black;
+  font-size: 1rem;
+}
+
+.convHeader {
+  font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 400px) {
+  .convHeader {
+    font-size: 1.4rem;
   }
-  
+}

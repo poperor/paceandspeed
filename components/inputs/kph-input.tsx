@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { InputProps } from "../../lib/conversion";
-import styles from "./kph-input.module.css";
+import styles from "./input.module.css";
 import utilityStyles from '../../styles/utility.module.css'
 
 export const KphInput = ({ setCannonicalKph }: InputProps) => {
@@ -14,7 +14,7 @@ export const KphInput = ({ setCannonicalKph }: InputProps) => {
 
   return (
     <div className={utilityStyles.verticalAlign}>
-      <input type="number" value={kph || ""} onChange={onChange} />
+      <input className={styles.speedinput} type="number" value={kph || ""} onChange={onChange} />
     </div>
   );
 };

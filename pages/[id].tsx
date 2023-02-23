@@ -30,7 +30,7 @@ const Conversion: NextPage<Props> = ({ id }) => {
         <meta name="og:title" content={title} />
       </Head>
     <div>
-      <h1>
+      <h1 className={styles.convHeader}>
         {title}
       </h1>
       <fieldset className={styles.inputContainer}>
@@ -38,7 +38,7 @@ const Conversion: NextPage<Props> = ({ id }) => {
         {inputType.inputComponent({ setCannonicalKph })}
       </fieldset>
       <fieldset className={styles.resultContainer}>
-        <legend>{upperCaseFirst(resultType.name)}</legend>
+        <legend className={styles.boxLegend}> {upperCaseFirst(resultType.name)}</legend>
         {resultType.resultComponent({ cannonicalKph })}
       </fieldset>
     </div>

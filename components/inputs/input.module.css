@@ -1,0 +1,19 @@
+.timeinput {
+    font-size: 1.4rem;
+}
+
+.mininput {
+    composes: timeinput;
+    width: 3rem;
+}
+
+.secinput {
+    composes: timeinput;
+    width: 3rem;
+    margin-left: 1.2rem;
+}
+
+.speedinput {
+    composes: timeinput;
+    width: 4rem;
+}
