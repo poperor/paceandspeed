@@ -4,13 +4,12 @@ import { MinutesPerKmResult } from "../components/results/minutes-per-km-result"
 import { MinutesPerKmInput } from "../components/inputs/minutes-per-km-input";
 import {
   ResultProps,
-  InputProps,
 } from "./conversion";
 
 export interface SpeedType {
   id: string;
   name: string;
-  inputComponent: ({ setCannonicalKph }: InputProps) => JSX.Element;
+  inputComponent: () => JSX.Element;
   resultComponent: ({ cannonicalKph }: ResultProps) => JSX.Element;
 }
 

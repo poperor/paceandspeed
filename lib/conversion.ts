@@ -1,9 +1,5 @@
 import { Dispatch, SetStateAction } from "react"
 
-export interface InputProps {
-    setCannonicalKph: Dispatch<SetStateAction<number>>
-}
-
 export interface ResultProps {
     cannonicalKph: number
 }

@@ -1,11 +1,13 @@
-import { useState } from "react";
-import { InputProps } from "../../lib/conversion";
+import { useState, useContext } from "react";
 import styles from "./input.module.css";
 import utilityStyles from '../../styles/utility.module.css'
+import { toKph } from "../../lib/conversion";
+import { CannonicalKph } from "../../context/canonical-kph";
 
-export const KphInput = ({ setCannonicalKph }: InputProps) => {
-  const [kph, setKph] = useState(0);
-
+export const KphInput = () => {
+  const { cannonicalKph, setCannonicalKph } = useContext(CannonicalKph);
+  const [kph, setKph] = useState(toKph(cannonicalKph));
+  
   const onChange = (event: React.FormEvent<HTMLInputElement>): void => {
     const kph = event.currentTarget.valueAsNumber;
     setKph(kph);
