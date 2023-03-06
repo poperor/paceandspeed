@@ -4,22 +4,22 @@
 import { createContext, useState, Dispatch, SetStateAction} from "react";
 
 type Context = {
-  cannonicalKph: number;
-  setCannonicalKph: Dispatch<SetStateAction<number>>
+  canonicalKph: number;
+  setCanonicalKph: Dispatch<SetStateAction<number>>
 };
 type Props = {
   children: React.ReactNode;
 };
 
-export const CannonicalKph = createContext({} as Context);
+export const CanonicalKph = createContext({} as Context);
 
 function Context({ children }: Props) {
-  const [cannonicalKph, setCannonicalKph] = useState<number>(0);
+  const [canonicalKph, setCanonicalKph] = useState<number>(0);
 
   return (
-    <CannonicalKph.Provider value = {{cannonicalKph, setCannonicalKph}}>
+    <CanonicalKph.Provider value = {{canonicalKph, setCanonicalKph}}>
       {children}
-    </CannonicalKph.Provider>
+    </CanonicalKph.Provider>
   );
 }
 

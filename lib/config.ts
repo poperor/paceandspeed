@@ -10,7 +10,7 @@ export interface SpeedType {
   id: string;
   name: string;
   inputComponent: () => JSX.Element;
-  resultComponent: ({ cannonicalKph }: ResultProps) => JSX.Element;
+  resultComponent: ({ canonicalKph }: ResultProps) => JSX.Element;
 }
 
 export const speedTypes: SpeedType[] = [
@@ -34,7 +34,7 @@ export interface Params {
   };
 }
 
-export const getAllPaths = (): Array<Params> => {
+export const getAllCalculatorPaths = (): Array<Params> => {
   const paths = speedTypes.flatMap((inputSpeedType) =>
     speedTypes
       .filter((resultSpeedType) => inputSpeedType.id !== resultSpeedType.id)

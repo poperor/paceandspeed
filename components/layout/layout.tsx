@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Header } from "../header/header";
 import styles from "./layout.module.css";
 
-const siteTitle = "Pace and speed";
+const siteTitle = "Runner's caclulator";
 
 type Props = {
   children?: React.ReactNode;

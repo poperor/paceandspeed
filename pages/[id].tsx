@@ -1,17 +1,17 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import { useContext } from "react";
-import { getAllPaths, Params, SpeedType, speedTypes } from "../lib/config";
+import { getAllCalculatorPaths, Params, SpeedType, speedTypes } from "../lib/config";
 import styles from "./[id].module.css"
 import {upperCaseFirst} from "upper-case-first"
-import { CannonicalKph } from "../context/canonical-kph";
+import { CanonicalKph } from "../context/canonical-kph";
 
 interface Props {
   id: string;
 }
 
 const Conversion: NextPage<Props> = ({ id }) => {
-  const { cannonicalKph } = useContext(CannonicalKph);
+  const { canonicalKph } = useContext(CanonicalKph);
   const [inputTypeId, resultTypeId] = id.split("-to-");
   const inputType = speedTypes.find(
     (speedType) => speedType.id === inputTypeId
@@ -39,21 +39,24 @@ const Conversion: NextPage<Props> = ({ id }) => {
       </fieldset>
       <fieldset className={styles.resultContainer}>
         <legend className={styles.boxLegend}> {upperCaseFirst(resultType.name)}</legend>
-        {resultType.resultComponent({ cannonicalKph })}
+        {resultType.resultComponent({ canonicalKph })}
       </fieldset>
     </div>
     </>
   );
 };
 
+// getStaticPaths pre-render all the paths for the various calculator pages. getStaticPaths will only run 
+// during build in production. In development (next dev), getStaticPaths will be called on every request.
 export async function getStaticPaths() {
-  const paths = getAllPaths();
+  const paths = getAllCalculatorPaths();
   return {
     paths,
     fallback: false,
   };
 }
 
+// getStaticProps returns the path (id) for the pre-rendered page (see getStaticPaths)
 export async function getStaticProps({ params }: Params) {
   return {
     props: {

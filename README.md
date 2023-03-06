@@ -1,6 +1,6 @@
-# Pace and Speed
+# Runner's caclulator
 
-Convert freely between pace and speed. You can also find pace and speed for the time used on any given distance or lap.
+Convert freely between pace and speed. You can also find pace or speed for the time used on any given distance or lap.
 
 ## Getting Started
 
@@ -11,4 +11,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Build and deploy
 

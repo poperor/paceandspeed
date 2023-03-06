@@ -2,17 +2,17 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "./index.module.css";
 import Link from 'next/link'
-import { getAllPaths } from "../lib/config";
+import { getAllCalculatorPaths } from "../lib/config";
 
 const Home: NextPage = () => {
-  const paths = getAllPaths()
+  const paths = getAllCalculatorPaths()
   const hrefs = paths.map(path => `./${path.params.id}`)
-  const title = "Pace and Speed"
+  const title = "Runner's caclulator"
   return (
     <div className={styles.container}>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Pace and Speed" />
+        <meta name="description" content="Runner's caclulator" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -3,8 +3,8 @@ import resultStyles from "./result.module.css";
 import utilityStyles from '../../styles/utility.module.css'
 import withLeadZeroes from "../../lib/with-lead-zeroes";
 
-export const MinutesPerKmResult = ({ cannonicalKph }: ResultProps) => {
-  const minutesPerKm = toMinutesPerKm(cannonicalKph);
+export const MinutesPerKmResult = ({ canonicalKph }: ResultProps) => {
+  const minutesPerKm = toMinutesPerKm(canonicalKph);
   return (
     <div>
       {minutesPerKm && (
