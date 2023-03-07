@@ -23,7 +23,7 @@ const Home: NextPage = () => {
           Convert freely between pace as minutes per kilometer or mile and speed in kilometers per hour or miles per hour. You
           can also find pace and speed for the time used on any given distance or lap. 
         </p>
-        {hrefs.map(href => <div key={href}><Link href={href}><a>{href}</a></Link></div>)}
+        {hrefs.map(href => <div key={href}><Link href={href}>{href}</Link></div>)}
         
       </main>
 
